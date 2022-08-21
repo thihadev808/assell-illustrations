@@ -34,8 +34,8 @@ export async function getStaticProps({ params }) {
 	return {
 		props: {
 			illustration: items[0],
-			revalidate: 1,
 		},
+		revalidate: 1,
 	};
 }
 
