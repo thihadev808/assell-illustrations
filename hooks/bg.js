@@ -19,6 +19,8 @@ export class App {
 		this.particles = [];
 		this.maxRadius = 1800;
 		this.minRadius = 800;
+		// this.maxRadius = 1800;
+		// this.minRadius = 800;
 
 		window.addEventListener("resize", this.resize.bind(this), false);
 		this.resize();

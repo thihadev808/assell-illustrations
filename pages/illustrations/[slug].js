@@ -21,7 +21,7 @@ export const getStaticPaths = async () => {
 
 	return {
 		paths,
-		fallback: false,
+		fallback: true,
 	};
 };
 
@@ -30,6 +30,15 @@ export async function getStaticProps({ params }) {
 		content_type: "gallery",
 		"fields.slug": params.slug,
 	});
+
+	if (!items.length) {
+		return {
+			redirect: {
+				destination: "/",
+				permanent: false,
+			},
+		};
+	}
 
 	return {
 		props: {
@@ -40,6 +49,8 @@ export async function getStaticProps({ params }) {
 }
 
 export default function IllustrationDetails({ illustration }) {
+	if (!illustration) return <div className='loading'>Loading...</div>;
+
 	const { featuredImage, title, time, tools, content } = illustration.fields;
 
 	return (
