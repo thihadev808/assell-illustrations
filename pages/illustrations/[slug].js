@@ -78,6 +78,9 @@ export default function IllustrationDetails({ illustration }) {
 					display: grid;
 					grid-template-columns: repeat(2, 1fr);
 					grid-gap: 30px 60px;
+					@media only screen and (max-width: 749px) {
+						grid-template-columns: 1fr;
+					}
 					.detailsImage {
 					}
 					.detailsData {
