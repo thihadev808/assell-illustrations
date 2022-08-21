@@ -17,7 +17,6 @@ export async function getStaticProps() {
 }
 
 export default function Illustrations({ illustrations }) {
-	console.log(illustrations);
 	return (
 		<>
 			<div className='top'>
